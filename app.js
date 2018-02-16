@@ -24,6 +24,10 @@ app.use(cors());
 //bodyParser MIDDLEWARE
 app.use(bodyParser.json());
 
+//passport MIDDLEWARE
+app.use(passport.initialize());
+app.use(passport.session());
+require('./config/passport')(passport)
 //set up the users routes
 app.use("/users", users)
 
